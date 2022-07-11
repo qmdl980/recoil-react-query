@@ -1,0 +1,49 @@
+.header{
+
+}
+
+.header-inner{
+    position:relative;
+    width: 1080px;
+    margin: 0 auto;
+    height: 5.5em;
+}
+
+.header-title{
+    padding:0.8em 0;
+    font-family: "one-title";
+    font-size:1.9em;
+    text-decoration: none;
+    font-weight: 800;
+    color: black;
+    transition: font-size 1s, color 1s, padding 3s;
+    width: fit-content;
+    display: inline-block;
+    margin: 0;
+}
+
+/*
+.header-title:hover{
+    font-size:2em;
+    color: aliceblue;
+    padding: 0.65em 0;
+}
+*/
+.header-menu{
+    width: fit-content;
+    padding: 0 3em;
+    margin: 0;
+    display: inline-block;
+}
+
+.menu-item {
+    font-family: "one-pop";
+    font-size: 1.3em;
+    height: 100%;
+    padding:0 26px;
+    color: black;
+}
+
+.menu-item :hover, :focus, :visited, :link, :active{
+    text-decoration: none;
+}

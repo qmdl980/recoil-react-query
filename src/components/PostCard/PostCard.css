@@ -1,0 +1,24 @@
+.post-card{
+    width:22rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 0.5em auto;
+}
+
+.post-card-img{
+    border-radius: 15px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.card-text{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    color:dimgrey;
+    font-size: 0.8em;
+}
