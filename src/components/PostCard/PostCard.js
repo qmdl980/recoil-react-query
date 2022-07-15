@@ -2,8 +2,7 @@ import { Card } from 'react-bootstrap'
 import img from "../../img/cover_img.png"
 import "./PostCard.css"
 import {useNavigate} from "react-router-dom";
-import {useRecoilState, useRecoilValue} from "recoil";
-import {pickedArticleIdState, articleState, articleListState} from "../../utils/recoilStore";
+
 
 const PostCard = (props) => {
     const navigate = useNavigate()

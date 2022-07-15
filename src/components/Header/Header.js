@@ -10,6 +10,9 @@ const Header = () => {
                 <h1 className="header-title">
                     <Link to={"/"}>블로그</Link>
                 </h1>
+                <h2 className="header-title">
+                    <Link to={"/edit"}>글쓰기</Link>
+                </h2>
 
             </div>
         </div>
