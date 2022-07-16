@@ -1,23 +1,12 @@
-import {Link, useNavigate, useParams} from "react-router-dom";
-import {useQuery} from "react-query";
-import axios from "axios";
-import {useRecoilState} from "recoil";
-import {pickedArticleIdState} from "../utils/recoilStore";
+import {useParams} from "react-router-dom";
+import {useRecoilValue} from "recoil";
+import {articleListState} from "../utils/recoilStore";
 
 
 const Article = () => {
-    const id = useParams().id
-    const navigate = useNavigate()
-
-    const {isLoading, data, error, isFetching} = useQuery("articleQuery", async () => {
-        const response = await axios.get(`/api/article/${id}`)
-        return response.data
-    })
-
-    if(isLoading){
-        console.log('loading')
-        return(<div>Loading...</div>)
-    }
+    const id = parseInt(useParams().id)
+    const articleList = useRecoilValue(articleListState)
+    const data = articleList.find((item) => item.id === id)
 
     return (
         <div className="article-wrap">

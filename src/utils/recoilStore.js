@@ -23,3 +23,8 @@ export const articleState = atom({
     key:'articleState',
     default:{}
 })
+
+export const categoryListState = atom({
+    key:'categoryListState',
+    default:[]
+})

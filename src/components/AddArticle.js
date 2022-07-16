@@ -1,24 +1,17 @@
 import {Button, Form} from "react-bootstrap"
 import {useNavigate} from "react-router-dom"
-import axios from "axios"
 import {useState} from "react";
-import {useQuery} from "react-query";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {articleListState, categoryListState} from "../utils/recoilStore";
 
 const AddArticle = () => {
     const [validated, setValidated] = useState(false)
-    const [category, setCategory] = useState("")
+    const categoryList = useRecoilValue(categoryListState)
+    const [articleList, setArticleList] = useRecoilState(articleListState)
     const navigate = useNavigate()
 
-    const {isLoading, data, error, isFetching} = useQuery("categoryQuery", async () => {
-        const response = await axios.get('api/category')
-        return response.data
-    })
-    if(isLoading){
-        return(<div>Loading...</div>)
-    }
-
     const handleSubmit = (e) => {
-
+        navigate('/')
     }
 
     return(
@@ -27,7 +20,7 @@ const AddArticle = () => {
                 <Form.Group controlId="categoryInput">
                     <Form.Select size="sm">
                         <option key = "blankChoice" hidden value>카테고리를 선택해주세요</option>
-                        {data.map((item) => <option value={item.category} key={item.id}>{item.category}</option>)}
+                        {categoryList.map((item) => <option value={item.category} key={item.id}>{item.category}</option>)}
                     </Form.Select>
                     <Form.Control.Feedback type="invalid">카테고리를 정해주세요</Form.Control.Feedback>
                 </Form.Group>
